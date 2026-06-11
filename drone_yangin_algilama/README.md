@@ -1,5 +1,3 @@
-<img width="392" height="850" alt="ezgif-10308e3b0fa844cd" src="https://github.com/user-attachments/assets/7a94ae30-fde8-4a8d-b8bb-a8c67b369b02" />
-<img width="392" height="850" alt="ezgif-10308e3b0fa844cd" src="https://github.com/user-attachments/assets/487f7931-f9eb-4f5a-92b0-c17c85911348" />
 # Drone Yangın / Alev Erken Uyarı Sistemi
 
 DJI Tello drone ile uçuş sırasında gerçek zamanlı alev ve duman tespiti yapan, tespitleri Firebase'e kaydeden ve anlık bildirim gönderen Android + NodeMCU tabanlı prototip sistem.
@@ -23,6 +21,8 @@ DJI Tello drone ile uçuş sırasında gerçek zamanlı alev ve duman tespiti ya
 ```
 
 **Android uygulaması:**
+<img width="392" height="850" alt="ezgif-10308e3b0fa844cd" src="https://github.com/user-attachments/assets/7a94ae30-fde8-4a8d-b8bb-a8c67b369b02" />
+
 - Tello'nun kamera görüntüsünü MediaProjection ile yakalar
 - YOLOv8 TorchScript modelini cihaz üzerinde çalıştırır (on-device inference)
 - Alev/duman tespitinde kare üzerine bounding box çizer ve Firebase Storage'a yükler
@@ -102,6 +102,7 @@ Alev Sensörü VCC →  NodeMCU 3.3V
 ---
 
 ## Uygulama Ekranları
+<img width="392" height="850" alt="ezgif-10308e3b0fa844cd" src="https://github.com/user-attachments/assets/7a94ae30-fde8-4a8d-b8bb-a8c67b369b02" />
 
 | Sekme | İçerik |
 |-------|--------|
