@@ -21,6 +21,8 @@ DJI Tello drone ile uçuş sırasında gerçek zamanlı alev ve duman tespiti ya
 ```
 
 **Android uygulaması:**
+---
+---
 <img width="392" height="850" alt="ezgif-10308e3b0fa844cd" src="https://github.com/user-attachments/assets/7a94ae30-fde8-4a8d-b8bb-a8c67b369b02" />
 
 - Tello'nun kamera görüntüsünü MediaProjection ile yakalar
