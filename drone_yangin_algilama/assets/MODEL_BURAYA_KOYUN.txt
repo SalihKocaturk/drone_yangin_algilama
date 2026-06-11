@@ -1,0 +1,14 @@
+Bu klasore, TorchScript formatina donusturulmus alev algilama modelinizi
+"model.pt" adiyla koyun (assets/model.pt).
+
+Donusturme (bir kerelik, Python tarafinda):
+
+    import torch
+    model = torch.load("flame_model.pt", map_location="cpu")
+    model.eval()
+    scripted = torch.jit.script(model)      # veya: torch.jit.trace(model, example_input)
+    scripted.save("model.pt")
+
+Modelin girdi boyutu (orn. 320x320) ve cikis formati
+lib/services/flame_detector.dart icindeki `inputSize` ve etiket dosyasi
+(assets/labels.txt) ile eslesmelidir.

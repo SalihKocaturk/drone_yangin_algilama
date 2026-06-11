@@ -1,0 +1,63 @@
+name: drone_yangin_algilama
+description: "DJI Tello canli goruntusu uzerinde arka planda calisan alev (yangin) erken uyari prototipi."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # --- PyTorch (.pt / TorchScript) modelini cihaz uzerinde calistirma ---
+  pytorch_lite: ^4.3.2
+
+  # --- Frame (bitmap) verisini Dart tarafinda islemek icin ---
+  image: ^4.2.0
+
+  # --- Sistem uzerinde "digger uygulamalarin ustunde goster" izni icin ---
+  permission_handler: ^11.3.1
+
+  cupertino_icons: ^1.0.8
+
+  # --- Firebase: tespit verisi + gorsel kaydi + anlik bildirim ---
+  firebase_core: ^3.8.0
+  cloud_firestore: ^5.5.0
+  firebase_storage: ^12.3.7
+  flutter_local_notifications: ^18.0.1
+
+  # --- Lokal depolama: internet yokken gorsel kuyruklama icin ---
+  path_provider: ^2.1.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    # PyTorch (TorchScript) alev algilama modeli
+    - assets/model.pt
+    # Modelin sinif etiketleri (orn: "alev", "arka_plan")
+    - assets/labels.txt
+
+# -----------------------------------------------------------------------------
+# NOT (model donusturme):
+# pytorch_lite, native PyTorch Mobile (org.pytorch:pytorch_android_lite) uzerinden
+# TorchScript (.pt) formatini calistirir. Egitilmis modelinizi cihaza koymadan once
+# TorchScript'e donusturmeniz gerekir (Python tarafinda, bir kerelik islem):
+#
+#   import torch
+#   model = torch.load("flame_model.pt", map_location="cpu")
+#   model.eval()
+#   scripted = torch.jit.script(model)        # veya torch.jit.trace(model, example_input)
+#   scripted.save("assets/model.pt")
+#
+# assets/model.pt bu sekilde uretilmis bir TorchScript modeli olmalidir.
+# Girdi boyutu (orn. 320x320) ve cikis formati (sinif + bbox) kendi modelinize
+# gore lib/services/flame_detector.dart icindeki sabitlerle eslesmelidir.
+# -----------------------------------------------------------------------------

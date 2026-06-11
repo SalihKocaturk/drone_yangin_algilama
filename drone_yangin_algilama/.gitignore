@@ -1,0 +1,76 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# ---------------------------------------------------------------
+# GİZLİ / HASSAS DOSYALAR — kesinlikle repo'ya girmesin
+# ---------------------------------------------------------------
+
+# Firebase yapılandırma dosyaları (API key, project ID içerir)
+**/google-services.json
+**/GoogleService-Info.plist
+# FlutterFire CLI tarafından üretilirse
+lib/firebase_options.dart
+
+# Android imzalama anahtarları
+*.jks
+*.keystore
+android/key.properties
+
+# Yerel ortam / SDK yolları
+android/local.properties
+
+# Arduino — WiFi şifresi ve API key hardcoded olduğu için
+# template olarak tut, gerçek dosyayı ignore et
+nodemcu_firebase/nodemcu_firebase.ino
+
+# Genel sır dosyaları
+.env
+.env.*
+secrets.json
+secrets.yaml
+
+# PyTorch model dosyası (büyük binary, Git LFS kullan veya ignore et)
+assets/model.pt
